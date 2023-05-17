@@ -26,7 +26,7 @@
 
 <body>
 
-  <H1>Chat in 10 lines of JavaScript. Powered by PubNub</H1>
+  <H1>Chat in 10 lines of JavaScript (Customized)</H1>
 
   <div class="flex-container">
 
@@ -40,7 +40,7 @@
 var pubnub = new PubNub(
   {publishKey: 'demo', subscribeKey: 'demo', 
    userId: 'user1'});
-var channel = '10chat';
+var channel = '10chat-custom';
 
 // Subscribe to a channel and add listener
 pubnub.subscribe({channels: [channel]}); 
@@ -120,6 +120,12 @@ input.addEventListener('keypress', function (e) {
       }
       return "<div class='" + messageClass + "'>" + message + you + date + "</div>"
     }
+
+    //  New, custom code
+    // in the iframe
+  window.addEventListener('message', ({ data }) => {
+    console.log('Message from parent frame: ', data); 
+  });
   </script>
 </body>
 
