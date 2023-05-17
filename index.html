@@ -125,7 +125,7 @@ input.addEventListener('keypress', function (e) {
     // in the iframe
   window.addEventListener('message', ({ data }) => {
     console.log('Message from parent frame: ', data); 
-    window.top.postMessage('Hello Salesforce, I am an iFrame', '*');
+    window.top.postMessage('Hello Salesforce, I am an iFrame, I received your message [' + data + ']', '*');
   });
   </script>
 </body>
